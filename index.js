@@ -5,7 +5,7 @@ app.use(express.static('public'));
 app.set('views', './views')
 app.set('view engine', 'jade');
 
-app.get('/', function (req, res) {
+app.get('/api', function (req, res) {
     res.send('Hello Trello!');
 });
 
