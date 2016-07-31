@@ -2,21 +2,11 @@ var svc = angular.module('TrelloSvc', []);
 
 svc.service('AngelloModel', function() {
     var service = this;
-    var statuses = [
-        {name: 'Back Log'},
-        {name: 'To Do'},
-        {name: 'In Progress'},
-        {name: 'Code Review'},
-        {name: 'QA Review'},
-        {name: 'Verified'},
-        {name: 'Done'}
-    ];
-    var types = [
-        {name: 'Feature'},
-        {name: 'Enhancement'},
-        {name: 'Bug'},
-        {name: 'Spike'}
-    ];
+
+    var statuses = ['Back Log', 'To Do', 'In Progress', 'Code Review', 'QA Review', 'Verified', 'Done'];
+
+    var types = ['Feature', 'Enhancement', 'Bug', 'Spike'];
+
     var stories = [
         {
             title: 'First story',
@@ -57,21 +47,5 @@ svc.service('AngelloModel', function() {
 
     service.getStories = function () {
         return stories;
-    };
-});
-
-svc.factory('AngelloHelper', function() {
-    var buildIndex = function (source, property) {
-        var tempArray = [];
-
-        for (var i = 0, len = source.length; i < len; ++i) {
-            tempArray[source[i][property]] = source[i];
-        }
-
-        return tempArray;
-    };
-
-    return {
-        buildIndex: buildIndex
     };
 });

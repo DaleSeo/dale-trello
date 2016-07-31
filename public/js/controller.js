@@ -1,6 +1,6 @@
 var ctrl = angular.module('TrelloCtrl', ['TrelloSvc']);
 
-ctrl.controller('MainCtrl', function (AngelloModel, AngelloHelper) {
+ctrl.controller('MainCtrl', function (AngelloModel) {
   var main = this;
 
   main.stories = AngelloModel.getStories();
@@ -8,13 +8,9 @@ ctrl.controller('MainCtrl', function (AngelloModel, AngelloHelper) {
   /* select */
   main.statuses = AngelloModel.getStatuses();
   main.types = AngelloModel.getTypes();
-  main.statusesIndex = AngelloHelper.buildIndex(main.statuses, 'name');
-  main.typesIndex = AngelloHelper.buildIndex(main.types, 'name');
 
   main.setCurrentStory = function (story) {
     main.currentStory = story;
-    main.currentStatus = main.statusesIndex[story.status];
-    main.currentType = main.typesIndex[story.type];
   };
 
   main.createStory = function() {
@@ -27,18 +23,6 @@ ctrl.controller('MainCtrl', function (AngelloModel, AngelloHelper) {
       reporter: 'Pending',
       assignee: 'Pending'
     });
-  };
-
-  main.setCurrentStatus = function (status) {
-    if (typeof main.currentStory !== 'undefined') {
-      main.currentStory.status = status.name;
-    }
-  };
-
-  main.setCurrentType = function (type) {
-    if (typeof main.currentStory !== 'undefined') {
-      main.currentStory.type = type.name;
-    }
   };
 
 });
