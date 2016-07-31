@@ -5,14 +5,18 @@ app.use(express.static('public'));
 app.set('views', './views')
 app.set('view engine', 'jade');
 
+app.get('/lite', function (req, res) {
+  res.render('lite', {});
+});
+
 app.get('/api', function (req, res) {
-    res.send('Hello Trello!');
+  res.send('Hello Trello!');
 });
 
 app.get('/jade', function (req, res) {
-    res.render('index', { title: 'Hey', message: 'Hello there!'});
+  res.render('index', { title: 'Hey', message: 'Hello there!'});
 });
 
 app.listen(3000, function () {
-    console.log('listening on prot 3000!')
+  console.log('listening on prot 3000!')
 });

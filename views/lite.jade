@@ -1,0 +1,47 @@
+doctype html
+html(ng-app='Trello')
+  head
+    title Dale's Trello
+    script(src='https://code.jquery.com/jquery-2.1.1.min.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js')
+    script(type='text/javascript', src='js/directive.js')
+    script(type='text/javascript', src='js/service.js')
+    script(type='text/javascript', src='js/controller.js')
+    script(type='text/javascript', src='js/app.js')
+    link(href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='css/app.css')
+  body(ng-controller='MainCtrl as main')
+    .container
+      .row
+        // left
+        .col-md-4
+          h2 Stories 11111
+          story.callout(ng-repeat='story in main.stories', ng-click='main.setCurrentStory(story)')
+          br
+          a.btn.btn-primary(ng-click='main.createStory()')
+            span.glyphicon.glyphicon-plus
+        // right
+        .col-md-6.content
+          h2 Story
+          form
+            .form-group
+              label.control-label(for='inputTitle') Title
+              input#inputTitle.form-control(type='text', placeholder='Title', ng-model='main.currentStory.title')
+          .form-group
+            label.control-label(for='inputStatus') Status
+            select#inputStatus.form-control(ng-model='main.currentStory.status', ng-options='status for status in main.statuses')
+          .form-group
+            label.control-label(for='inputType') Type
+            select#inputType.form-control(ng-model='main.currentStory.type', ng-options='type for type in main.types')
+          .form-group
+            label.control-label(for='inputDescription') Description
+            textarea#inputDescription.form-control(placeholder='Description', rows='3', ng-model='main.currentStory.description')
+          .form-group
+            label.control-label(for='inputAcceptance') Acceptance Criteria
+            textarea#inputAcceptance.form-control(placeholder='Acceptance Criteria', rows='3', ng-model='main.currentStory.criteria')
+          .form-group
+            label.control-label(for='inputReporter') Reporter
+            input#inputReporter.form-control(type='text', placeholder='Reporter', ng-model='main.currentStory.reporter')
+          .form-group
+            label(for='inputAssignee') Assignee
+            input#inputAssignee.form-control(type='text', placeholder='Assignee', ng-model='main.currentStory.assignee')

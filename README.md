@@ -1,9 +1,10 @@
 # dale-trello
 
 ## To Do
-- Change index.html to index.jade
+- start standard trello
 
 ## Done
+- Change index.html to index.jade
 - Change statues and types to array
 - Display story details
 - Divide controllers and services from app.js
