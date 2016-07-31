@@ -1,10 +1,12 @@
 # dale-trello
 
 ## To Do
-- Divide controllers and services from app.js
-- Display story details
+- Change statues and types to array
+- Change index.html to index.jade
 
 ## Done
+- Display story details
+- Divide controllers and services from app.js
 - Set-up ExpressJS
 - Express static settings
 - Display the story list
