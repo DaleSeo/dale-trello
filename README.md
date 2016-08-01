@@ -1,9 +1,13 @@
 # dale-trello
 
 ## To Do
+- Look through Stand Trello First
+- Develop server APIs
+- Try to use Firebase
 - start standard trello
 
 ## Done
+- Add Mongoose
 - Change index.html to index.jade
 - Change statues and types to array
 - Display story details
