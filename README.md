@@ -1,10 +1,9 @@
 # dale-trello
 
 ## To Do
-- Look through Stand Trello First
+- Start standard trello again after studying AngularJS more
 - Develop server APIs
 - Try to use Firebase
-- start standard trello
 
 ## Done
 - Add Mongoose
